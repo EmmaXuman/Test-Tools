@@ -39,12 +39,25 @@ namespace GenerateQRCode
 
             bool b_we = rb_we_y.Checked ? true : false;
 
-            var imgIcon = ImageHelper.UrlToImage("");
+            var imgIcon = ImageHelper.UrlToImage("https://uat-oss.ribencun.com/20190517/%E5%85%94%E5%AD%90.png");
             Bitmap bmpIcon = new Bitmap(imgIcon);
 
             var bmp = QRCodeHelper.GenerateCode(str_msg, version, pixel, bmpIcon, int_icon_size, int_icon_border, b_we);
 
             pb_qrcode.Image = bmp;
+        }
+
+        private void bt_save_Click( object sender, EventArgs e )
+        {
+            if (pb_qrcode.Image != null)
+
+                using (SaveFileDialog sfd = new SaveFileDialog())
+                {
+                    sfd.Filter = "(*.png)|*.png|(*.bmp)|*.bmp";
+
+                    if (sfd.ShowDialog() == DialogResult.OK) pb_qrcode.Image.Save(sfd.FileName);
+
+                }
         }
     }
 }

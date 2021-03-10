@@ -45,7 +45,7 @@ namespace GenerateQRCode
         {
             using var code_generator = new QRCodeGenerator();
             var code_data = code_generator.CreateQrCode(msg, QRCodeGenerator.ECCLevel.M, true, true, QRCodeGenerator.EciMode.Utf8, version);
-            var code = new QRCode(code_data);
+            using var code = new QRCode(code_data);
 
             var bmp = code.GetGraphic(pixel, Color.Black, Color.White, icon, icon_size, icon_border, white_edge);
             return bmp;

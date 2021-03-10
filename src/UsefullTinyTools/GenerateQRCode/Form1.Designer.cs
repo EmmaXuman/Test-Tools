@@ -205,6 +205,7 @@ namespace GenerateQRCode
             this.bt_save.TabIndex = 13;
             this.bt_save.Text = "保存";
             this.bt_save.UseVisualStyleBackColor = true;
+            this.bt_save.Click += new System.EventHandler(this.bt_save_Click);
             // 
             // tb_msg
             // 
