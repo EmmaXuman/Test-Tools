@@ -8,6 +8,7 @@ namespace FactoryDemo.Operators
 {
     public class MultiplyOperator:BaseOpterator
     {
+        public new string Realize => "*";
         public override double GetResult()
         {
             return NumberA*NumberB;

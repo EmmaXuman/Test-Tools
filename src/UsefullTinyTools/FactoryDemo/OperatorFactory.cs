@@ -1,4 +1,5 @@
-﻿using FactoryDemo.Operators;
+﻿using Autofac.Extensions.DependencyInjection;
+using FactoryDemo.Operators;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,11 @@ namespace FactoryDemo
 {
     public class OperatorFactory
     {
+
+
         public static BaseOpterator CreateOperator(string opterateType)
         {
-            BaseOpterator opterator = null;
+            BaseOpterator opterator=null;
             switch (opterateType)
             {
                 case "+":
